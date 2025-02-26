@@ -1,0 +1,18 @@
+{
+  "authors": [
+    { "id": "1", "name": "Author1" },
+    { "id": "2", "name": "Author2" }
+  ],
+  "books": [
+    { "id": "1", "title": "Book1", "authorId": "1", "reviews": ["1"] },
+    { "id": "2", "title": "Book2", "authorId": "2", "reviews": ["2"] }
+  ],
+  "reviews": [
+    { "id": "1", "content": "Excellent book", "rating": 5, "reviewerId": "1", "bookId": "1" },
+    { "id": "2", "content": "Pretty good", "rating": 4, "reviewerId": "2", "bookId": "2" }
+  ],
+  "reviewers": [
+    { "id": "1", "name": "Reviewer1" },
+    { "id": "2", "name": "Reviewer2" }
+  ]
+}
