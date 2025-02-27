@@ -1,0 +1,49 @@
+type Query {
+    getBooks: [Book]
+    getBookById(id: ID!): Book
+    getBooksByAuthorId(authorId: ID!): [Book]
+    getAuthors: [Author]
+}
+
+type Mutation {
+    addBook(bookInput: BookInput): Book
+    addReview(reviewInput: ReviewInput): Review
+}
+
+type Book {
+    id: ID!
+    title: String!
+    author: Author!
+    reviews: [Review]
+}
+
+type Author {
+    id: ID!
+    name: String!
+    books: [Book]
+}
+
+type Review {
+    id: ID!
+    content: String!
+    rating: Int!
+    reviewer: Reviewer!
+}
+
+type Reviewer {
+    id: ID!
+    name: String!
+    reviews: [Review]
+}
+
+input BookInput {
+    title: String!
+    authorId: ID!
+}
+
+input ReviewInput {
+    content: String!
+    rating: Int!
+    reviewerId: ID!
+    bookId: ID!
+}
