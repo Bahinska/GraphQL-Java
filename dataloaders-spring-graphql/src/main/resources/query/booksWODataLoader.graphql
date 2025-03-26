@@ -1,0 +1,14 @@
+{
+    booksWODataLoader {
+        id
+        title
+        mainReviews {
+            id
+            rating
+        }
+        reviews {
+            id
+            rating
+        }
+    }
+}
