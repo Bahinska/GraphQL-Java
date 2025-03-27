@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "rating": 2,
+    "bookId": "1"
+  },
+  {
+    "id": "2",
+    "rating": 5,
+    "bookId": "1"
+  },
+  {
+    "id": "3",
+    "rating": 3,
+    "bookId": "2"
+  }
+]
