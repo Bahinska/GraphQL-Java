@@ -1,0 +1,50 @@
+scalar DateTime
+
+# Type for a Book
+type BookResponse {
+    id: ID!
+    title: String!
+    price: Float!
+}
+
+# Type for an Author
+type AuthorResponse {
+    id: ID!
+    name: String!
+    email: String!
+    createdAt: DateTime!
+    books: [BookResponse!]
+}
+
+# Input type for creating an Author
+input CreateAuthorInput {
+    name: String!
+    email: String!
+}
+
+# Input type for updating an Author
+input UpdateAuthorInput {
+    id: ID!
+    name: String
+    email: String
+}
+
+# Response using ResponseType pattern
+type ResponseType {
+    success: Boolean!
+    errors: [String]
+    data: AuthorResponse
+}
+
+# Queries
+type Query {
+    getAuthorById(id: ID!): ResponseType
+    getAllAuthors: [AuthorResponse!]
+}
+
+# Mutations
+type Mutation {
+    createAuthor(input: CreateAuthorInput!): ResponseType
+    updateAuthor(input: UpdateAuthorInput!): ResponseType
+    deleteAuthor(id: ID!): ResponseType
+}
