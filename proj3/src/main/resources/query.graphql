@@ -1,0 +1,64 @@
+query GetAuthorById {
+    getAuthorById(id: 1231231) {
+        success
+        errors
+        data {
+            id
+            name
+            email
+            createdAt
+            books {
+                id
+                title
+                price
+            }
+        }
+    }
+}
+
+query GetAllAuthors {
+    getAllAuthors {
+        id
+        name
+        email
+        createdAt
+        books {
+            id
+            title
+            price
+        }
+    }
+}
+
+mutation CreateAuthor {
+    createAuthor(input: { name: "New Author", email: "new.author@example.com" }) {
+        success
+        errors
+        data {
+            id
+            name
+            email
+            createdAt
+        }
+    }
+}
+
+mutation UpdateAuthor {
+    updateAuthor(input: { id: 1231231, name: "Updated Author", email: "updated.author@example.com" }) {
+        success
+        errors
+        data {
+            id
+            name
+            email
+            createdAt
+        }
+    }
+}
+
+mutation DeleteAuthor {
+    deleteAuthor(id: 1231231) {
+        success
+        errors
+    }
+}
