@@ -56,8 +56,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .requestMatchers( "/favicon.ico", "/graphiql", "/graphiql", "/h2-console/**", "/product").permitAll()
-                        .anyRequest().permitAll()
+                        .requestMatchers( "/favicon.ico", "/graphiql", "/graphiql", "/h2-console/**", "/book").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer
                         .accessDeniedHandler(accessDeniedHandler)
